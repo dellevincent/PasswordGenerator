@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Password Generator</string>
+    <string name="password_generator">Password Generator</string>
+    <string name="image">Image</string>
+    <string name="generate">Generate</string>
+    <string name="number_of_characters_in_your_password">Number of Characters in your password?</string>
+    <string name="how_many_characters_do_you_want_your_password_to_be">How many characters do you want your password to be?</string>
+    <string name="length_of_desired_password">Length of desired password</string>
+    <string name="alphanumeric">AlphaNumeric</string>
+    <string name="digits">Digits</string>
+    <string name="password_type">Password type</string>
+    <string name="reset">Reset</string>
+</resources>
