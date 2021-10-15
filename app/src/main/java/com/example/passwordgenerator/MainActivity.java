@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                     genbutton.setVisibility(View.GONE);
                     rst.setVisibility(View.VISIBLE);
                     for(int i = 0; i < rgroup.getChildCount(); i++){
-                        ((RadioButton)rgroup.getChildAt(i)).setEnabled(false);
+                        rgroup.getChildAt(i).setEnabled(false);
                     }
                 }
             }
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                 genbutton.setVisibility(View.VISIBLE);
                 rst.setVisibility(View.GONE);
                 for(int i = 0; i < rgroup.getChildCount(); i++){
-                    ((RadioButton)rgroup.getChildAt(i)).setEnabled(true);
+                    rgroup.getChildAt(i).setEnabled(true);
                 }
             }
         });
