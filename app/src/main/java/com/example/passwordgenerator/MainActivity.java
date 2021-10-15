@@ -8,7 +8,6 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -73,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                     findRadioButton(checkedId);
                     genbutton.setVisibility(View.GONE);
                     rst.setVisibility(View.VISIBLE);
+                    editText.setEnabled(false);
                     for(int i = 0; i < rgroup.getChildCount(); i++){
                         rgroup.getChildAt(i).setEnabled(false);
                     }
@@ -85,8 +85,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 editText.getText().clear();
+                editText.setEnabled(true);
                 rgroup.clearCheck();
                 display.setText("");
+                genbutton.setEnabled(false);
                 genbutton.setVisibility(View.VISIBLE);
                 rst.setVisibility(View.GONE);
                 for(int i = 0; i < rgroup.getChildCount(); i++){
