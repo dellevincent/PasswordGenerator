@@ -19,7 +19,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.599" />
+        app:layout_constraintVertical_bias="0.7" />
 
     <Button
         android:id="@+id/generatebutton"
@@ -29,42 +29,42 @@
         android:text="@string/generate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.483" />
+        app:layout_constraintVertical_bias="0.573" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="405dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="@string/how_many_characters_do_you_want_your_password_to_be"
         android:textSize="20sp"
         android:visibility="visible"
         app:autoSizeTextType="none"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNumber"
         android:layout_width="257dp"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/length_of_desired_password"
+        android:importantForAutofill="no"
         android:inputType="number"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.014"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.128"
+        app:layout_constraintVertical_bias="0.103"
         tools:ignore="TextContrastCheck"
-        tools:textColorHint="#757575"
-        android:importantForAutofill="no" />
+        tools:textColorHint="#757575" />
 
     <RadioGroup
         android:id="@+id/rGroup"
@@ -75,7 +75,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.32">
+        app:layout_constraintVertical_bias="0.37">
 
         <RadioButton
             android:id="@+id/digits"
@@ -106,7 +106,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.23" />
+        app:layout_constraintVertical_bias="0.215" />
 
     <Button
         android:id="@+id/reset"
@@ -117,7 +117,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordDisplay" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordDisplay"
+        app:layout_constraintVertical_bias="0.8" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
