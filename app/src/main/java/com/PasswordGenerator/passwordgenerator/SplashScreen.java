@@ -5,13 +5,15 @@
  * This was created out of boredom and learning purposes
  **/
 
-package com.example.passwordgenerator;
+package com.PasswordGenerator.passwordgenerator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.example.passwordgenerator.R;
 
 public class SplashScreen extends AppCompatActivity {
 

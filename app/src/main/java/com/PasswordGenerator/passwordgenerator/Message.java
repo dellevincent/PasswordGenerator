@@ -5,7 +5,7 @@
  * This was created out of boredom and learning purposes
  **/
 
-package com.example.passwordgenerator;
+package com.PasswordGenerator.passwordgenerator;
 
 import android.content.Context;
 import android.widget.Toast;

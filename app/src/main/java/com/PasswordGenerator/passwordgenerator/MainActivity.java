@@ -5,7 +5,7 @@
 * This was created out of boredom and learning purposes
 **/
 
-package com.example.passwordgenerator;
+package com.PasswordGenerator.passwordgenerator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,6 +18,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import com.example.passwordgenerator.R;
 
 import java.util.Random;
 
