@@ -21,6 +21,6 @@ public class PasswordGeneratorInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.passwordgenerator", appContext.getPackageName());
+        assertEquals("com.PasswordGenerator.passwordgenerator", appContext.getPackageName());
     }
 }
