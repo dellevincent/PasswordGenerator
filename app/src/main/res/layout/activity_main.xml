@@ -79,14 +79,14 @@
 
         <RadioButton
             android:id="@+id/digits"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/digits"
             tools:textSize="36sp" />
 
         <RadioButton
             android:id="@+id/alphaNumeric"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
             android:text="@string/alphanumeric"

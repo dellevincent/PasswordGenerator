@@ -9,6 +9,7 @@ package com.example.passwordgenerator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -35,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         rgroup = findViewById(R.id.rGroup);
         genbutton = findViewById(R.id.generatebutton);
         editText = findViewById(R.id.editTextNumber);
@@ -43,78 +43,68 @@ public class MainActivity extends AppCompatActivity {
         rst = findViewById(R.id.reset);
 
         editText.addTextChangedListener(new TextWatcher() {
+
+
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
-
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String value = editText.getText().toString().trim();
-                genbutton.setEnabled(!value.isEmpty() || rgroup.getCheckedRadioButtonId()!=-1);
+                genbutton.setEnabled(!value.isEmpty());
             }
-
             @Override
             public void afterTextChanged(Editable s) {
 
             }
         });
 
-        genbutton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                int checkedId = rgroup.getCheckedRadioButtonId();
-                String value = editText.getText().toString().trim();
+        genbutton.setOnClickListener(v -> {
+            int checkedId = rgroup.getCheckedRadioButtonId();
+            String value = editText.getText().toString().trim();
 
-                if(checkedId == -1){
-                    Message.message(getApplicationContext(), "Please select Password Type");
-                }
-                else if(value.isEmpty()){
-                    Message.message(getApplicationContext(), "Please Enter the number of characters you want");
-                }
-                else if(value.isEmpty() && checkedId == -1){
-                    Message.message(getApplicationContext(), "Please fill both fields");
-                }
-                else{
-                    findRadioButton(checkedId);
-                    genbutton.setVisibility(View.GONE);
-                    rst.setVisibility(View.VISIBLE);
-                    editText.setEnabled(false);
-                    for(int i = 0; i < rgroup.getChildCount(); i++){
-                        rgroup.getChildAt(i).setEnabled(false);
-                    }
+            if(checkedId == -1){
+                Message.message(getApplicationContext(), "Please select Password Type");
+            }
+            else if(value.isEmpty()){
+                Message.message(getApplicationContext(), "Please Enter the number of characters you want");
+            }
+            else{
+                findRadioButton(checkedId);
+                genbutton.setVisibility(View.GONE);
+                rst.setVisibility(View.VISIBLE);
+                editText.setEnabled(false);
+                for(int i = 0; i < rgroup.getChildCount(); i++){
+                    rgroup.getChildAt(i).setEnabled(false);
                 }
             }
         });
 
-        rst.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                editText.getText().clear();
-                editText.setEnabled(true);
-                rgroup.clearCheck();
-                display.setText("");
-                genbutton.setEnabled(false);
-                genbutton.setVisibility(View.VISIBLE);
-                rst.setVisibility(View.GONE);
-                for(int i = 0; i < rgroup.getChildCount(); i++){
-                    rgroup.getChildAt(i).setEnabled(true);
-                }
+        rst.setOnClickListener(v -> {
+            editText.getText().clear();
+            editText.setEnabled(true);
+            rgroup.clearCheck();
+            display.setText("");
+            genbutton.setEnabled(false);
+            genbutton.setVisibility(View.VISIBLE);
+            rst.setVisibility(View.GONE);
+            for(int i = 0; i < rgroup.getChildCount(); i++){
+                rgroup.getChildAt(i).setEnabled(true);
             }
         });
     }
 
+    @SuppressLint("NonConstantResourceId")
     private void findRadioButton(int checkedId) {
         Random rand = new Random();
         int temp;
-        String newPassword="";
+        StringBuilder newPassword= new StringBuilder();
         switch(checkedId){
             case R.id.digits:
                 //Message.message(getApplicationContext(),"Digit Selected");
                 for(int i=0; i<Integer.parseInt(editText.getText().toString()); i++){
                     temp= rand.nextInt(digitValue.length());
-                    newPassword += digitValue.charAt(temp);
+                    newPassword.append(digitValue.charAt(temp));
                 }
                 display.setText(newPassword);
 
@@ -124,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                 //Message.message(getApplicationContext(),"AlphaNumeric Selected");
                 for(int i=0; i<Integer.parseInt(editText.getText().toString()); i++){
                     temp= rand.nextInt(alphaNumValues.length());
-                    newPassword += alphaNumValues.charAt(temp);
+                    newPassword.append(alphaNumValues.charAt(temp));
                 }
                 display.setText(newPassword);
                 break;
