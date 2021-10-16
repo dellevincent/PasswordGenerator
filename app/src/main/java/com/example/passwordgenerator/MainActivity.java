@@ -66,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
             if(checkedId == -1){
                 Message.message(getApplicationContext(), "Please select Password Type");
             }
-            else if(value.isEmpty()){
-                Message.message(getApplicationContext(), "Please Enter the number of characters you want");
+            else if(value.isEmpty() || 0 == Integer.parseInt(value)){
+                Message.message(getApplicationContext(), "Please Enter the number of characters you want and it can't be zero");
             }
             else{
                 findRadioButton(checkedId);
