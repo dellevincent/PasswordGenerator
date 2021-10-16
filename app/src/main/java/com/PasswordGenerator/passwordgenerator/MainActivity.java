@@ -7,8 +7,6 @@
 
 package com.PasswordGenerator.passwordgenerator;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.Editable;
@@ -19,7 +17,7 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import com.example.passwordgenerator.R;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
 
@@ -66,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             String value = editText.getText().toString().trim();
 
             if(checkedId == -1){
-                Message.message(getApplicationContext(), "Please select Password Type");
+                Message.message(getApplicationContext(), "Please select PasswordGenerator Type");
             }
             else if(value.isEmpty() || 0 == Integer.parseInt(value)){
                 Message.message(getApplicationContext(), "Please Enter the number of characters you want and it can't be zero");
@@ -76,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 genbutton.setVisibility(View.GONE);
                 rst.setVisibility(View.VISIBLE);
                 editText.setEnabled(false);
+                display.setTextIsSelectable(true);
                 for(int i = 0; i < rgroup.getChildCount(); i++){
                     rgroup.getChildAt(i).setEnabled(false);
                 }
@@ -87,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
             editText.setEnabled(true);
             rgroup.clearCheck();
             display.setText("");
+            display.setTextIsSelectable(false);
             genbutton.setEnabled(false);
             genbutton.setVisibility(View.VISIBLE);
             rst.setVisibility(View.GONE);
@@ -109,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
                     newPassword.append(digitValue.charAt(temp));
                 }
                 display.setText(newPassword);
-
                 break;
 
             case R.id.alphaNumeric:
