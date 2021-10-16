@@ -74,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
             else{
                 findRadioButton(checkedId);
                 genbutton.setVisibility(View.GONE);
-                display.setTextIsSelectable(true);
                 rst.setVisibility(View.VISIBLE);
                 editText.setEnabled(false);
                 for(int i = 0; i < rgroup.getChildCount(); i++){
@@ -88,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
             editText.setEnabled(true);
             rgroup.clearCheck();
             display.setText("");
-            display.setTextIsSelectable(false);
             genbutton.setEnabled(false);
             genbutton.setVisibility(View.VISIBLE);
             rst.setVisibility(View.GONE);
